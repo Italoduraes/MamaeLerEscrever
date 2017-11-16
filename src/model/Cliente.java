@@ -12,9 +12,9 @@ public class Cliente {
 	
 	@Override
 	public String toString() {
-		return "Nome= " + nome + "\n" +
+		return "Cliente - Nome= " + nome + "\n" +
 				"CPF= " + CPF + "\n" +
-				"Idade=" + idade;
+				"Idade=" + idade + "]";
 	}
 
 

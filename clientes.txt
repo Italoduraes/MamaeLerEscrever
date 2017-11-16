@@ -1,3 +1,7 @@
 Maria da Silva;123456789-00;25
 Joao ferreira;987654321-00;72
 italo durães;0671600301-90;21
+Joaquin silva;005151548-88;25
+Lula da Silva;258741369-99;78
+Bruno Fufu;21654987312-46;35
+Jojo juju;23658974-66;12

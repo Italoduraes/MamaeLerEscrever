@@ -42,7 +42,7 @@ public class BD {
 		this.clientes.add(c);
 		//transformar cliente em String
 		String cliente = c.getNome() + ";" + c.getCPF() +  ";" + c.getIdade();
-		// instanciar o documentWriter
+		// instanciar o documentWriter - *add no bloco de notas*
 		DocumentWriter dw = new DocumentWriter();
 		// gravar o cliente no arquivo
 		dw.write(this.fileName, cliente);

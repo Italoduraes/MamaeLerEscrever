@@ -2,6 +2,8 @@ package main;
 
 import java.util.ArrayList;
 
+import control.ControleCadastrarCliente;
+import control.ControleExibirCLiente;
 import model.BD;
 import model.Cliente;
 
@@ -12,16 +14,19 @@ public class Principal {
 		
 		//instanciar o BD
 		BD bd=new BD();
+		//instanciar controleExibirClientes
+		ControleExibirCLiente cec = new ControleExibirCLiente(bd);
+		// instanciar ControleCadastrarCLientes
+		ControleCadastrarCliente ccc= new ControleCadastrarCliente(bd);
 		
-		// Retornar o ArrayList de Clientes
+		//Exibir todos os clientes
+		cec.exibirCliente();
 		
-		ArrayList<Cliente> clientes = bd.getClientes();
+		// inserir um novo cliente
+		ccc.cadastrarCliente();
 		
-		// Percorrer o ArrayList de Clientes
-		
-		for (int i = 0; i < clientes.size(); i++) {
-			System.out.println(clientes.get(i));
-		}
+		//Exibir todos os clientes novamente
+		cec.exibirCliente();
 		
 
 	}
