@@ -14,8 +14,13 @@ public class Principal {
 		
 		//instanciar o BD
 		BD bd=new BD();
+		
+		// Carregar os Clientes do arquivo
+		bd.carregarClientes();
+		
 		//instanciar controleExibirClientes
 		ControleExibirCLiente cec = new ControleExibirCLiente(bd);
+		
 		// instanciar ControleCadastrarCLientes
 		ControleCadastrarCliente ccc= new ControleCadastrarCliente(bd);
 		

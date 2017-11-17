@@ -16,7 +16,13 @@ public class Cliente {
 				"CPF= " + CPF + "\n" +
 				"Idade=" + idade + "]";
 	}
+	
+	/* metodo que transforma um cliente na representacao dele em linha 
+	  para salvar em um arquivo */
 
+	public String toLinha(){
+		return getNome() + ";" + getCPF() + ";" + getIdade();
+	}
 
 	// metodo construtor 
 	public Cliente(String nome, String cPF, int idade) {

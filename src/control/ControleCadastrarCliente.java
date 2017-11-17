@@ -3,6 +3,7 @@ package control;
 import model.BD;
 import model.Cliente;
 import view.ViewCadastrarCliente;
+import view.ViewClienteExiste;
 
 public class ControleCadastrarCliente {
 
@@ -24,16 +25,23 @@ public class ControleCadastrarCliente {
 		//chamar metodo para obter os dados
 		vcc.obterDadosCliente();
 		
-		//instanciar um objeto da classe cliente com os dados digitados 
-		// Integer.parseInt()** é converter String para int- numero inteiro
-		Cliente c= new Cliente(vcc.getNome(), vcc.getCPF(), Integer.parseInt(vcc.getIdade()));
-		
-		// guardar cliente no BD
-		this.bd.gravarCliente(c);
-	}
-	
-	
-	
-	
-	
+		// Verificar se o cliente já existe 
+		if(this.bd.existeCliente(vcc.getCPF())){
+			
+			// instanciar a view
+			ViewClienteExiste vce = new ViewClienteExiste();
+			
+			// exibir a mensagem
+			vce.exibirMensagemClienteExiste();
+			
+		}else{
+			//instanciar um objeto da classe cliente com os dados digitados 
+			// Integer.parseInt()** é converter String para int- numero inteiro
+			
+			Cliente c= new Cliente(vcc.getNome(), vcc.getCPF(), Integer.parseInt(vcc.getIdade()));
+			
+			// guardar cliente no BD
+			this.bd.gravarCliente(c);
+		}	
+		}
 }
